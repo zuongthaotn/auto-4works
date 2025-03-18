@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+    volumes:
+      # thư mục lưu data và file config
+      - ./mongodb:/data/db
+      - ./mongoconfig:/data/configdb
+    networks:
+      - mongo_network
+networks:
+  mongo_network:
+    name: mongo_network
+    driver: bridge
