@@ -1,0 +1,14 @@
+{
+    "index": {
+        "auto_increament": {
+            "column_name": "Order ID",
+            "len_row": 8,
+            "len_col": 1000,
+            "prefix": "DLS_",
+            "postfix": ""
+        }
+    },
+    "columns": {
+        "name": "Name"
+    }
+}
