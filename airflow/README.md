@@ -1,0 +1,1 @@
+Do bản airflow cài trên docker quá nặng, chiếm tới 40-50gb ổ cứng nên sẽ cài trên máy thật thay vì docker.
