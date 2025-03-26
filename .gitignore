@@ -1,3 +1,5 @@
 .env
 *.csv
 .venv
+*.tgz
+spark/spark_home
