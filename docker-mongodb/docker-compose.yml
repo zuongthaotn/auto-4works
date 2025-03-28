@@ -1,14 +1,23 @@
 services:
   mongodb:
-    image: mongodb/mongodb-community-server:6.0
+    image: mongodb/mongodb-community-server:6.0.18-ubuntu2204
     container_name: mongodb
-    restart: always
+    restart: none
     ports:
       - "27017:27017"
     environment:
       MONGODB_INITDB_ROOT_USERNAME: admin
       MONGODB_INITDB_ROOT_PASSWORD: admin123
     volumes:
-      - mongodb_data:/data/db
+      - type: bind
+        source: ./data
+        target: /data/db
+  starter:
+    image: mongodb/mongodb-community-server:6.0.18-ubuntu2204
+    environment:
+      - CONN_STR=mongodb://user:pass@mongodb
+    command: '/bin/bash -c "sleep 5; mongosh $$CONN_STR --eval \"show dbs;\""'
+    depends_on:
+      - mongodb
 volumes:
   mongodb_data:
