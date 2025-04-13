@@ -5,3 +5,7 @@
 spark/spark_home
 docker-magento2.4.3/db_data/
 docker-magento2.4.3/src/
+docker-magento2.4.7/db_data/
+docker-magento2.4.7/src/
+docker-magento2.4.7/mysql-dump/
+docker-magento2.4.7/logs/
