@@ -3,3 +3,5 @@
 .venv
 *.tgz
 spark/spark_home
+docker-magento2.4.3/db_data/
+docker-magento2.4.3/src/
