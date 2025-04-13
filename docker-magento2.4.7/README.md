@@ -19,4 +19,8 @@ Magento: 2.4.7
     - or copy
     - or use scp to download from server.
 3. Copy file database to import mysql-dump/ folder and rename it to magento.sql
-4. run docker-compose up -d
+4. docker-compose build mage247_php --no-cache
+5. run docker-compose up -d
+6. access mysql and change base_url
+update core_config_data set value = 'http://mage247.local:8080/' where path = 'web/unsecure/base_url';
+update core_config_data set value = 'http://mage247.local:8080/' where path = 'web/secure/base_url';
